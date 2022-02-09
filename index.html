@@ -4,7 +4,7 @@
 
  <style>
  	
-html { 
+body { 
  min-height: 100%;
  min-width: 100%;
  background-size: cover; 
@@ -19,7 +19,7 @@ html {
 	</head> 
 	<body> 
 	
-	 <div id="bg"></div>
+ <!--	 <div id="bg"></div> -->
 	
 	  <script>
 	  	
@@ -35,7 +35,7 @@ html {
 	  	  	 	  
 	  	  	 	console.log('Coming up!')
 	  	  	 	   
-	  	  	 	   const element = document.getElementById('bg');
+	 /* 	  	 	   const element = document.getElementById('bg');
 	  	  	 	   
 	  	  	 	   const img = document.createElement("img")
 	  	  	 	   
@@ -43,7 +43,9 @@ html {
 	  	  	 	   img.alt = "your browser doesn\'t want a neko!'";
 	  	  	 	   
 	  	  	 	   element.appendChild(img)
-	  	  	 	   
+	  	  	 	   */
+	  	  	 	  
+	  	  	 	  document.body.style.backgroundImage = "url(" + d.url + ")"
 	  	  	 	
 	  	  	 	
 	  	  	 })
