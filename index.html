@@ -1,45 +1,16 @@
 <html>
 	<head>
 		<title> Get Your Neko >.< </title> 
-
- <style>
- 	
- body { 
- min-height: 100%;
- min-width: 100%;
- background-size: contain;
- background-repeat: no-repeat; 
- background-position: center center;
- 
-  }
- 	
- 	
- 	 </style>
-
-	</head> 
-	<body> 
 		
-	  <script>
-	  	
-	  	  const apiURL = 'https://nekos.best/api/v1/nekos';
-	  	  
-	  	  
-	  	  fetch(apiURL).then((data) => {
-	  	  	
-	  	  	   console.log('fetching a waifu....')
-	  	  	  	  	  	   
-	  	  	
-	  	  	 data.json().then(d => {	  	  	 	
-	  	  	 	  
-	  	  	 	console.log('Coming up!')
-	  	  	 	   
- document.body.style.backgroundImage = "url(" + d.url + ")"
-	  	  	 
-	  	  	 	
-	  	  	 })
-	  	  	      	  	
-	  	  })
-	  	
-	  </script>
+		<link rel="stylesheet" href="style.css">
+		
+	</head> 
+	<body "onload=getNeko()"> 	
+	
+	
+	 <div id="meow" onclick="meow()"> </div>
+	
+	  <script src="script.js"></script>
+	  
 	</body>
 </html>
