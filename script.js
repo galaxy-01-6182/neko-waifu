@@ -31,23 +31,18 @@ async function getNeko(){
 
 function downloadNeko(){
 	
-	  const confirmation = window.confirm('Nya~\nDo you wish to see the original link of this neko or download it?')
-	  
-	  if(!confirmation) return;
-	  
 	 const img = document.body.style.backgroundImage
 	 
 	 const url = img.substring(5, img.length - 2)
 	  
-	  const anchour = document.createElement('a')
+	  const anchour = document.getElementById('nekoDownload')
 	  
    anchour.href = url
 	  anchour.download = url.split('/').pop()
 	  
-	  anchour.target = '_blank'
+	 anchour.target = '_blank'
+	  
 	  anchour.click()
-	  anchour.remove()
-	 
 
 }
 
