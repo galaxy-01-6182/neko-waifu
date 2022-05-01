@@ -9,29 +9,46 @@ const apiURL = 'https://nekos.best/api/v2/neko';
 
 const delay = 10000; // 10 seconds	 
 
+   confirmOpen();
+	  loadScreen();
+
    window.setInterval(getNeko, delay);
 	
  	
-	  confirm();
-	  loadScreen();
-	  getNeko();
 	  
 	
   
 async function getNeko(){
 
-	 const data = await fetch(apiURL);
-	  	  	
-	console.log('fetching a waifu....');
-	  	  	  	  	  	   
-	  	  	
+	const data = await fetch(apiURL);
+	  	  		  	  	  	  	  	     	  	
  const { results } = await data.json();
-	  	  	
-	console.log('Coming up!');
-	  	  	 	   
+	  	  	  	 	   
  document.body.style.backgroundImage = `url(${results[0].url})`;
 	  	  	 	
 	  	  
+}
+
+function downloadNeko(){
+	
+	  const confirmation = window.confirm('Nya~\nDo you wish to see the original link of this neko or download it?')
+	  
+	  if(!confirmation) return;
+	  
+	 const img = document.body.style.backgroundImage
+	 
+	 const url = img.substring(5, img.length - 2)
+	  
+	  const anchour = document.createElement('a')
+	  
+   anchour.href = url
+	  anchour.download = url.split('/').pop()
+	  
+	  anchour.target = '_blank'
+	  anchour.click()
+	  anchour.remove()
+	 
+
 }
 
 function loadScreen(){
@@ -42,9 +59,9 @@ function loadScreen(){
 	
 }
 
-function confirm(){
+function confirmOpen(){
 	
-	  alert("Hiii!\nBy clicking ok you are ok to view some nekos ok? And I don\'t own any of the images displayed here\nMeow!'")
+	  alert("Hiii!\nBy clicking ok you are ok to view some nekos ok? And I don\'t own any of the media content displayed here\nMeow!'")
 	
 }
 
@@ -56,7 +73,6 @@ function meow(){
 	 
 	 document.audioExists = true;
 	 
-	 audio.class = "aishi"
 	 audio.src = "aishi.mp3"
 	 audio.play()
 	 
